@@ -28,7 +28,7 @@ export type MyInputType = {
 };
 
 export type configType = {
-  baseURL: 'https://mmclean.ru/';
+  baseURL: 'https://server.mmclean.ru/';
   headers: {
     Accept: 'application/json';
     'Content-Type': 'application/json';
@@ -36,7 +36,7 @@ export type configType = {
 };
 
 export type configFormDataType = {
-  baseURL: 'https://mmclean.ru/';
+  baseURL: 'https://server.mmclean.ru/';
   headers: {
     'Content-Type': 'multipart/form-data';
   };

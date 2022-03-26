@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import com.reactnativecommunity.geolocation.GeolocationPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 

@@ -12,6 +12,7 @@ import AccountRootScreen from './src/screens/Main/AccountRootScreen';
 import AccountContainer from './src/screens/Main/AccountScreen';
 import {requestPermissions} from './src/utils/getLocation';
 import AppMetrica from 'react-native-appmetrica';
+import YaMap from 'react-native-yamap';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -21,6 +22,9 @@ const App = (): JSX.Element => {
     sessionTimeout: 120,
     firstActivationAsUpdate: true,
   });
+  YaMap.init('720031ff-361e-416d-b9e1-045f715acf74');
+  YaMap.setLocale('ru_RU'); // 'ru_RU'...
+  YaMap.resetLocale();
   const commonState = useSelector((state: rootState) => state.list);
   const dispatch = useDispatch();
   useEffect(() => {

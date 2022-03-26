@@ -7,14 +7,14 @@ export const getToken = async (): Promise<string | null> => {
 };
 
 const config: configType = {
-  baseURL: 'https://mmclean.ru/',
+  baseURL: 'https://server.mmclean.ru/',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
   },
 };
 const configFormData: configFormDataType = {
-  baseURL: 'https://mmclean.ru/',
+  baseURL: 'https://server.mmclean.ru/',
   headers: {
     'Content-Type': 'multipart/form-data',
   },

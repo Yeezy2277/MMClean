@@ -66,6 +66,7 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import {Props} from '../../constants/types';
 import {useDispatch, useSelector} from 'react-redux';
 import {rootState} from '../../store/store';
+import YaMap from 'react-native-yamap';
 
 const width = Dimensions.get('screen').width;
 
@@ -173,6 +174,10 @@ const CalculateRoot: ({navigation}: Props) => JSX.Element = ({
 const CalculateScreen: ({navigation}: Props) => JSX.Element = ({
   navigation,
 }: Props) => {
+  const route = {
+    start: { lat: 0, lon: 0},
+    end: { lat: 10, lon: 10},
+  };
   const dispatch = useDispatch();
   const commonState = useSelector((state: rootState) => state.list);
   let modal = useRef(null).current;
@@ -1029,15 +1034,19 @@ const CalculateScreen: ({navigation}: Props) => JSX.Element = ({
                 height={width * 0.3}
               />
               <View pointerEvents="none" style={styles.mapContainer}>
-                <MapView
-                  style={styles.map}
-                  scrollEnabled={false}
-                  region={region}
-                  ref={mapRef}>
-                  <Marker coordinate={region}>
-                    <MarkerCustom />
-                  </Marker>
-                </MapView>
+                <YaMap
+                  userLocationIcon={{ uri: 'https://www.clipartmax.com/png/middle/180-1801760_pin-png.png' }}
+                  style={{ flex: 1 }}
+                />
+                {/*<MapView*/}
+                {/*  style={styles.map}*/}
+                {/*  scrollEnabled={false}*/}
+                {/*  region={region}*/}
+                {/*  ref={mapRef}>*/}
+                {/*  <Marker coordinate={region}>*/}
+                {/*    <MarkerCustom />*/}
+                {/*  </Marker>*/}
+                {/*</MapView>*/}
               </View>
               <Text style={[styles.text, {marginTop: width * 0.09}]}>
                 Дата и время уборки

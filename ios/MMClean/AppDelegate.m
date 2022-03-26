@@ -5,6 +5,7 @@
 #import <React/RCTRootView.h>
 
 #import <GoogleMaps/GoogleMaps.h>
+#import <YandexMapsMobile/YMKMapKitFactory.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -50,6 +51,7 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [YMKMapKit setApiKey: @"720031ff-361e-416d-b9e1-045f715acf74"];
   return YES;
 }
 
